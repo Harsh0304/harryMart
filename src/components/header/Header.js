@@ -18,7 +18,6 @@ import {
 const Header = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [newUser, setNewUser] = useState("");
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -66,6 +65,7 @@ const Header = () => {
   return (
     <>
       {isLoading && <Loader />}
+
       <header>
         <div className="container header__container">
           <div className="header">
@@ -96,13 +96,15 @@ const Header = () => {
                 <FaCartPlus />
               </Link>
               {isLoggedIn && (
-                <Link to="/register" className="register">
+                <Link to="/profile" className="register">
                   <FaUser /> {userName}
                 </Link>
               )}
-              <Link to="/register" className="register">
-                Register
-              </Link>
+              {!isLoggedIn && (
+                <Link to="/register" className="register">
+                  Register
+                </Link>
+              )}
               {!isLoggedIn && (
                 <Link to="/login" className="btn btn__login">
                   Login

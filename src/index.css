@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+:root {
+  --color-primary: #265636;
+  --color-primary-varient: #367a53;
+  --color-shadow-1: #fde5e7;
+  --color-shadow-2: #e6e6e7;
+  --color-shadow-3: #e9e9ea;
+  --color-btn: #1c482b;
+  --color-text: #1f442c;
+  --color-bg-1: #c5f5d5;
+  --color-bg-2: #7cde9c;
+  --color-dark: #2a333e;
+  --color-dark-varient: #cdcdce;
+  --color-white: #ffff;
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --shadow-red: 0 5rem 2rem 2rem var(--color-shadow-1);
+  --shadow-dark: 0 5rem 2rem 2rem var(--color-shadow-3);
+  --transition: all 400ms ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Domine", serif;
+  background: var(--color-bg-4);
+  color: var(--color-btn-dark);
+  line-height: 1.7;
+}
+
+h1,
+h2 {
+  line-height: 1;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.6rem;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 3.8rem;
+  font-weight: 800;
+}
+
+a {
+  color: var(--color-btn);
+  transition: var(--transition);
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+  max-width: 2160px;
+  position: relative;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+.grid-4-cal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-3-cal {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+section {
+  padding: 6rem 0;
+}
+.warn {
+  background: rgb(201, 77, 0) !important;
+}
+.green {
+  background: #11a14b !important;
+}
+.btn {
+  background: var(--color-btn);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
 }
